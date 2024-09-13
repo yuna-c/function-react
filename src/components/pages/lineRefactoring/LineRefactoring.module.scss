@@ -1,0 +1,73 @@
+.main {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #eb7f7f;
+  min-height: 100vh; /* 최소 높이를 뷰포트 높이로 설정 */
+  color: #eb7f7f;
+}
+
+.header {
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.content {
+  margin: 40px 0;
+
+  h3 {
+    padding: 0 0 5px 0;
+    font-size: 1.5rem;
+    display: inline-flex;
+  }
+
+  .contentRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* 자식 요소가 부모 높이에 맞춰 늘어남 */
+    min-height: 70px; /* 최소 높이를 설정 */
+
+    .column {
+      width: 45%;
+    }
+
+    .verticalLineColumn {
+      width: 1px;
+      background-color: #eb7f7f;
+      max-height: 0; /* 초기 높이 0 */
+      animation: growVerticalLineColumn 1.5s forwards;
+      align-self: stretch; /* 부모 높이에 맞춰 확장 */
+    }
+  }
+
+  .contentColumn {
+  }
+}
+
+/* 가로선 애니메이션 */
+.animatedLine {
+  width: 0;
+  height: 1px;
+  background-color: #eb7f7f;
+  margin: 10px 0;
+  animation: growLine 1.5s forwards;
+}
+
+@keyframes growLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes growVerticalLineColumn {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 1000px; /* 세로선이 부모의 최대 높이만큼 확장 */
+  }
+}

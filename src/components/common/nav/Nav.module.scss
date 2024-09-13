@@ -1,0 +1,21 @@
+.Nav {
+  ul {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    border-bottom: 1px solid #000;
+
+    li {
+      border-right: 1px solid #000;
+      a {
+        padding: 10px;
+        display: block;
+        white-space: nowrap;
+      }
+
+      & :last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
